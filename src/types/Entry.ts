@@ -1,7 +1,7 @@
 import KeyMap from './KeyMap';
 
 export interface Entry extends KeyMap {
-  AdjTime?: string;
+  AdjTime: string;
   Bow: string;
   Crew: string;
   CrewAbbrev: string;
@@ -9,9 +9,9 @@ export interface Entry extends KeyMap {
   EventAbbrev: string;
   EventNum: string;
   Gate?: string;
-  Place?: string;
+  Place: number;
   State?: string;
-  Stroke?: string;
+  Stroke: string;
   Time?: string;
   Timestamp?: number;
   uuid?: string;

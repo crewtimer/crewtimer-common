@@ -1,20 +1,20 @@
 import { Entry } from './Entry';
 
 export interface Event {
-  Day?: string;
+  Day: string;
   DispOrder: number[];
-  entries?: Entry[];
+  entries: Entry[];
   Event: string;
 
   eventIndex: number; // Internal to results calc
-  EventInfo?: string;
+  EventInfo: string;
   eventItems: Entry[];
-  eventKey?: string; // used by mobile app internal results calc
+  eventKey: string; // used by mobile app internal results calc
   EventNum: string;
-  Finished?: boolean;
-  Official?: boolean;
+  Finished: boolean;
+  Official: boolean;
   RaceType: 'Head' | 'Sprint';
-  Start?: string;
+  Start: string;
 }
 
 export type EventList = Event[];
