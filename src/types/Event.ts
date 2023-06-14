@@ -15,6 +15,7 @@ export interface Event {
   Official: boolean;
   RaceType: 'Head' | 'Sprint';
   Start: string;
+  TZOffset: number;
 }
 
 export type EventList = Event[];

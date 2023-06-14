@@ -39,6 +39,7 @@ export interface ResultRegattaInfo {
   ResultsPendOfficial: boolean;
   ResultWaypoints: string;
   RMPublishDisable: boolean;
+  ShowProgress: boolean;
   Title: string;
   Titles: KeyMap<string>;
   Waypoints: string;
