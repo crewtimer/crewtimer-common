@@ -64,6 +64,7 @@ export const distanceFromName = (eventName: string) => {
   }
   return 0;
 };
+
 /**
  * Define regex for detecting progression suffixes.  Each
  * entry is a triple of [Abbrev Prexix, RegEx to detect, RegEx for suffix | suffix, RefEx for timingIndex]
@@ -74,12 +75,15 @@ const RegexTimingNames: [string, RegExp, RegExp | string][] = [
   ['QAD', /QF[1-4]+$/i, /[1-4]$/],
   ['SAB', /SAB[1-4]+$/i, /[1-4]$/],
   ['SAB', /S(emi)? *[1-4]+$/i, /[1-4]$/],
+  ['SAB', /Semi$/i, '1'],
   ['SCD', /SCD[1-4]+$/i, /[1-4]$/],
   ['SEF', /SEF[1-4]+$/i, /[1-4]$/],
   ['SGH', /SGH[1-4]+$/i, /[1-4]$/],
-  ['TF', /T(imed)? *F(inal)? *[A-D]$/i, /[A-D]$/i], // test before FA,FB
-  ['TF', /T(imed)? *F(inal)?$/i, 'A'],
+  ['TF', /(Timed *|T)F(inal)? *[A-D]$/i, /[A-D]$/i], // test before FA,FB
+  ['TF', /(Timed *|T)F(inal)?$/i, 'A'],
   ['H', /H(eat)? *[1-9][0-9]*$/i, /[1-9][0-9]*$/], // must be after QEH
+  ['FA', /Direct Final$/i, ''],
+  ['FB', /Petite Final$/i, ''],
   ['FA', /Final$/i, ''],
   ['FA', /F(inal)? *A$/i, ''],
   ['FB', /F(inal)? *B$/i, ''],
@@ -91,6 +95,8 @@ const RegexTimingNames: [string, RegExp, RegExp | string][] = [
   ['FH', /F(inal)? *H$/i, ''],
   ['TT', /T(ime)? *T(rial)?$/i, '1'],
   ['TT', /T(ime)? *T(rial)?[1-9][0-9]*$/i, /[1-9][0-9]*$/],
+  ['TT', /Race for lanes?$/i, '1'],
+  ['TT', /Race for lanes *?[1-9][0-9]*$/i, /[1-9][0-9]*$/],
   // unsupported
   ['Err: Must be QAD1-4', /QAD$/i, ''],
   ['Err: Must be QEH1-4', /QEH$/i, ''],
@@ -102,6 +108,7 @@ const RegexTimingNames: [string, RegExp, RegExp | string][] = [
  * eventName = 'Womens Varsity'
  * bracket = 'H1'
  * bracketType = 'H'
+ * bracketIndex: 1,2,3,4 etc
  *
  * @param name The Event Name extracted from the spreadsheet
  * @returns {eventName: string, bracket: string bracketType: string, bracketIndex: number}
@@ -137,7 +144,8 @@ export const decodeEventName = (name: string, eventNum: string) => {
     eventName = eventName.substring(0, index);
     break;
   }
-  eventName = eventName.trim();
+  // trim and remove trailing - if present
+  eventName = eventName.trim().replace(/ *-$/, '');
 
   const result = {
     eventName,
