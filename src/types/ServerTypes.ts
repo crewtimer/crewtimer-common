@@ -59,6 +59,10 @@ export interface StopwatchConfig {
   useStopwatchTimes: boolean;
 }
 
+export interface TrackingStation {
+  name: string;
+}
+
 /** Public regatta settings */
 export interface RegattaInfo {
   ClearTS: number;
@@ -71,6 +75,7 @@ export interface RegattaInfo {
   Finished?: boolean;
   FlightRaces?: string[][];
   InfoText?: string;
+  NtpServers?: string[];
   NumDays: string;
   PenaltyLocations?: string;
   PointsEngine: string;
@@ -85,6 +90,7 @@ export interface RegattaInfo {
   Stopwatch?: StopwatchConfig;
   Title: string;
   Titles?: KeyMap<string>;
+  TrackingStations?: TrackingStation[];
   Waypoints: string;
 }
 
