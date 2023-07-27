@@ -1,6 +1,6 @@
 import { Event, EventList } from './Event';
 import { KeyMap } from './KeyMap';
-import { RegattaInfo } from './ServerTypes';
+import { RegattaInfo, TrackingStation } from './ServerTypes';
 export interface EntryProgressItem {
   c?: string; // Control station status (Launch, etc)
   e?: string; // exception status (DNS, DNF, etc)
@@ -42,6 +42,7 @@ export interface ResultRegattaInfo {
   ShowProgress: boolean;
   Title: string;
   Titles: KeyMap<string>;
+  TrackingStations?: TrackingStation[];
   Waypoints: string;
 }
 
