@@ -145,7 +145,10 @@ export const decodeEventName = (name: string, eventNum: string) => {
     break;
   }
   // trim and remove trailing - if present
-  eventName = eventName.trim().replace(/ *-$/, '');
+  eventName = eventName.trim();
+  if (!eventName.match(/[248x]-$/)) {
+    eventName = eventName.replace(/ *-$/, '');
+  }
 
   const result = {
     eventName,
