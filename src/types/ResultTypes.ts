@@ -44,6 +44,7 @@ export interface ResultRegattaInfo {
   Titles: KeyMap<string>;
   TrackingStations?: TrackingStation[];
   Waypoints: string;
+  json?: string;
 }
 
 export interface Results {

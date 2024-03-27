@@ -14,7 +14,7 @@ As time allows, this codebase will be cleaned and documented but these initial v
 ### Coming Soon
 
 * crewtimer-handicaps - A handicap engine for CrewTimer handicap calculations
-* crewtimer-lynx - Support for FinishLynx integration with CrewTimer.  This is an electron app.
+* crewtimer-connect - Support for FinishLynx integration with CrewTimer and video review of placements.
 
 ### Future Open Source
 
@@ -22,3 +22,10 @@ As time allows, this codebase will be cleaned and documented but these initial v
 * crewtimer-results - CrewTimer results website [https://crewtimer.com](https://crewtimer.com)
 * crewtimer-admin - CrewTimer Admin interface [https://admin.crewtimer.com](https://admin.crewtimer.com)
 * crewtimer-wisblock - Hardware devices such as the BLE Clicker and Mobile Horn (C++)
+
+## Publishing a new npm version (maintainers only)
+
+1. Update the version in package.json
+2. First check for any errors by running ```yarn prepublishOnly```
+3. ```npm login``` as crewtimer
+4. If no errors: ```npm publish```

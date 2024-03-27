@@ -14,5 +14,6 @@ export interface Entry extends KeyMap {
   Stroke: string;
   Time?: string;
   Timestamp?: number;
+  json?: string;
   uuid?: string;
 }
