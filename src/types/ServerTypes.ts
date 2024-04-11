@@ -75,6 +75,7 @@ export interface RegattaInfo {
   Finished?: boolean;
   FlightRaces?: string[][];
   InfoText?: string;
+  LogoURL?: string;
   NtpServers?: string[];
   NumDays: string;
   PenaltyLocations?: string;
@@ -88,6 +89,7 @@ export interface RegattaInfo {
   Source: 'Local' | 'CrewTimer.com';
   Stations: RMStation[];
   Stopwatch?: StopwatchConfig;
+  SubTitle?: string;
   Title: string;
   Titles?: KeyMap<string>;
   TrackingStations?: TrackingStation[];
@@ -130,6 +132,7 @@ export interface ResultSummary {
   Name: string;
   NumDays: string;
   Public: string;
+  SubTitle?: string;
   Title: string;
 }
 
