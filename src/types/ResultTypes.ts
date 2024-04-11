@@ -24,6 +24,7 @@ export interface ResultRegattaInfo {
   FlightRaces: string;
   HasRoster: boolean;
   InfoText: string;
+  LogoURL: string;
   Name: string;
   NumDays: string;
   NumEntries: number;

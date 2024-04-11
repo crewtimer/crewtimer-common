@@ -16,6 +16,7 @@ export interface Event {
   RaceType: 'Head' | 'Sprint';
   Start: string;
   TZOffset: number;
+  json?: string;
 }
 
 export type EventList = Event[];
