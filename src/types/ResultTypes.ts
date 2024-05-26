@@ -41,7 +41,6 @@ export interface ResultRegattaInfo {
   ResultWaypoints: string;
   RMPublishDisable: boolean;
   ShowProgress: boolean;
-  SubTitle?: string;
   Title: string;
   Titles: KeyMap<string>;
   TrackingStations?: TrackingStation[];

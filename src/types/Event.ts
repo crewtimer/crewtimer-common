@@ -13,7 +13,7 @@ export interface Event {
   EventNum: string;
   Finished: boolean;
   Official: boolean;
-  RaceType: 'Head' | 'Sprint';
+  RaceType: 'Sprint' | 'Head' | 'Info' | 'SprintStaggered';
   Start: string;
   TZOffset: number;
   json?: string;

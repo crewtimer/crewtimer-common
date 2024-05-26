@@ -2,7 +2,7 @@ import { Entry } from './Entry';
 import { KeyMap } from './KeyMap';
 
 import { RMStation, RMConfigSummary } from './RMTypes';
-export type RaceType = 'Sprint' | 'Head';
+export type RaceType = 'Sprint' | 'Head' | 'Info' | 'SprintStaggered';
 export type ConfigSource = 'Local' | 'CrewTimer.com';
 
 export interface PenaltyInfo {
@@ -74,7 +74,10 @@ export interface RegattaInfo {
   DayList: string[];
   Finished?: boolean;
   FlightRaces?: string[][];
+  HandicapType: string;
+  HandicapNormalized: boolean;
   InfoText?: string;
+  LiveConfig?: KeyMap;
   LogoURL?: string;
   NtpServers?: string[];
   NumDays: string;
@@ -89,7 +92,6 @@ export interface RegattaInfo {
   Source: 'Local' | 'CrewTimer.com';
   Stations: RMStation[];
   Stopwatch?: StopwatchConfig;
-  SubTitle?: string;
   Title: string;
   Titles?: KeyMap<string>;
   TrackingStations?: TrackingStation[];
@@ -132,7 +134,6 @@ export interface ResultSummary {
   Name: string;
   NumDays: string;
   Public: string;
-  SubTitle?: string;
   Title: string;
 }
 
