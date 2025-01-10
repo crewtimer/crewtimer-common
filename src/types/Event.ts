@@ -14,6 +14,9 @@ export interface Event {
   Finished: boolean;
   Official: boolean;
   RaceType: 'Sprint' | 'Head' | 'Info' | 'SprintStaggered';
+  Distribution: 'time' | 'roundrobin' | 'random' | 'reversing';
+  Progression: string;
+  Multiplier: string;
   Start: string;
   TZOffset: number;
   json?: string;
