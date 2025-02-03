@@ -1,6 +1,6 @@
 {
   "name": "crewtimer-common",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Common types and utilities for CrewTimer",
   "main": "./dist/cjs/src/index.js",
   "module": "./dist/esm/src/index.js",

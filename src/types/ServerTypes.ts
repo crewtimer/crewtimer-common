@@ -79,6 +79,7 @@ export interface RegattaInfo {
   InfoText?: string;
   LiveConfig?: KeyMap;
   LogoURL?: string;
+  Name: string;
   NtpServers?: string[];
   NumDays: string;
   PenaltyLocations?: string;
@@ -96,6 +97,7 @@ export interface RegattaInfo {
   Titles?: KeyMap<string>;
   TrackingStations?: TrackingStation[];
   Waypoints: string;
+  FeeType?: string; // Fee | Test | NoFee
 }
 
 /** Private regatta settings
@@ -105,6 +107,8 @@ export interface RegattaConfig extends RegattaInfo {
   DocUrl: string;
   MobileKey: string;
   MobilePins?: [{ pin: string; stationType: string }];
+  CloudKey: string;
+  Owner: string;
 }
 
 export interface QRCodeInfo {
@@ -130,17 +134,19 @@ export interface ReloadResult {
 
 export interface ResultSummary {
   Date: string;
+  FeeType: string;
   InfoText: string;
   Name: string;
   NumDays: string;
-  Public: string;
+  NumEntries: number;
+  Public: boolean;
   Title: string;
 }
 
 export interface AdminSummary extends ResultSummary {
-  NumEntries: number;
   Owner: string;
   RaceType: string;
+  Admins: string;
 }
 
 export interface DBSettings {
@@ -156,6 +162,10 @@ export interface DBRegatta {
   lapdata: Lap[];
   lapdataTS?: number;
   settings: DBSettings;
+  Payment?: {
+    invoiceId: string;
+    updateTime: string;
+  };
 }
 
 /** Base regatta data plus some cooked fields used when calculating results */
