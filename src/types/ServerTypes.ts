@@ -147,6 +147,10 @@ export interface AdminSummary extends ResultSummary {
   Owner: string;
   RaceType: string;
   Admins: string;
+  Payment?: {
+    invoiceId: string;
+    updateTime: string;
+  };
 }
 
 export interface DBSettings {
