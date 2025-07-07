@@ -2,7 +2,7 @@ import { Entry } from './Entry';
 import { KeyMap } from './KeyMap';
 
 import { RMStation, RMConfigSummary } from './RMTypes';
-export type RaceType = 'Sprint' | 'Head' | 'Info' | 'SprintStaggered';
+export type RaceType = 'Sprint' | 'Head' | 'Info' | 'Pursuit';
 export type ConfigSource = 'Local' | 'CrewTimer.com';
 
 export interface PenaltyInfo {

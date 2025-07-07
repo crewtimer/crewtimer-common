@@ -9,6 +9,7 @@ export interface Entry extends KeyMap {
   EventAbbrev: string;
   EventNum: string;
   Gate?: string;
+  Handicap?: number;
   Place: number;
   State?: string;
   Stroke: string;

@@ -13,7 +13,7 @@ export interface Event {
   EventNum: string;
   Finished: boolean;
   Official: boolean;
-  RaceType: 'Sprint' | 'Head' | 'Info' | 'SprintStaggered';
+  RaceType: 'Sprint' | 'Head' | 'Info' | 'Pursuit';
   Progression: string;
   Multiplier: string;
   Start: string;
