@@ -48,12 +48,25 @@ export interface ResultRegattaInfo {
   json?: string;
 }
 
+/**
+ * Contents of /results/<regattaId> in database
+ */
 export interface Results {
   lastUpdatedEvent: string;
   P: Progress;
   regattaInfo: ResultRegattaInfo;
-  ResultOmitCols?: string[];
   results: Event[];
+  lastUpdated?: {
+    [waypoint: string]: { Bow: string; EventNum: string; Time: string; timestamp: number };
+  };
+}
+
+/**
+ * Raw internal calculation results
+ */
+export interface ResultsCalc extends Results {
+  ResultOmitCols?: string[];
+  mobileUpdates?: KeyMap;
   ResultsPendOfficial?: boolean;
 }
 

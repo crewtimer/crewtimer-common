@@ -61,6 +61,10 @@ export interface StopwatchConfig {
 
 export interface TrackingStation {
   name: string;
+  description?: string;
+  trackingCd?: string;
+  isNumeric?: boolean;
+  defaultQty?: number;
 }
 
 /** Public regatta settings */
