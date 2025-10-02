@@ -26,6 +26,7 @@ export interface DocAttachment {
   uuid: string;
 }
 export interface Lap extends Entry {
+  Battery?: number;
   Docs?: DocAttachment[];
   Duplicate?: boolean;
   index?: number;
@@ -39,6 +40,7 @@ export interface Lap extends Entry {
   PenaltyTime?: string;
   Reporter?: string;
   SequenceNum?: number;
+  Splits?: number;
   State?: 'Deleted' | string; // fixme - add other options
   stationType?: string;
   Status?: LapStatus;
