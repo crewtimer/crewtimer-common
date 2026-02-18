@@ -10,6 +10,7 @@ export interface EntryProgressItem {
 export interface Progress {
   S: KeyMap<EntryProgressItem>; // index by eventId
   Waypoints: string[];
+  TrackingStations: TrackingStation[];
 }
 
 export interface ResultRegattaInfo {
