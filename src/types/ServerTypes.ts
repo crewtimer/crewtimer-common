@@ -80,6 +80,7 @@ export interface RegattaInfo {
   DayList: string[];
   Finished?: boolean;
   FlightRaces?: string[][];
+  HandicapMultiplier?: string;
   HandicapType: string;
   HandicapNormalized: boolean;
   InfoText?: string;
@@ -90,6 +91,7 @@ export interface RegattaInfo {
   NumDays: string;
   PenaltyLocations?: string;
   PointsEngine: string;
+  PursuitGroupInterval?: number;
   RMConfig: RMConfigSummary;
   RMPublishDisable: boolean;
   RaceType: RaceType;

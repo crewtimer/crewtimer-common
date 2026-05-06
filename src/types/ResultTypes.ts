@@ -24,6 +24,7 @@ export interface ResultRegattaInfo {
   Finished: boolean;
   FlightRaces: string;
   HasRoster: boolean;
+  HandicapMultiplier: string;
   InfoText: string;
   LogoURL: string;
   Name: string;
@@ -34,6 +35,7 @@ export interface ResultRegattaInfo {
   PenaltyLocations: string;
   PointsEngine: string;
   Public: boolean;
+  PursuitGroupInterval?: number;
   RaceType: string;
   ResultDigits: string;
   ResultOmitCols: string[];
