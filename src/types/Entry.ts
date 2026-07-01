@@ -13,6 +13,10 @@ export interface Entry extends KeyMap {
   Place: number;
   State?: string;
   Stroke: string;
+  CoxDeadWeight?: string;
+  CoxName?: string;
+  CoxId?: string;
+  WeightUM?: string;
   Time?: string;
   Timestamp?: number;
   json?: string;
